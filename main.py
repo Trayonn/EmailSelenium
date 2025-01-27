@@ -17,21 +17,14 @@ profile_path = r"CAMINHO DO SEU PERFIL DO NAVEGADOR"
 
 options.profile = profile_path
 
-# Caminho do GeckoDriver
 gecko_driver_path = r"CAMINHO DO GECKODRIVER, OU DO CHROMEDRIVER E ETC"  # Substitua pelo caminho correto
 
-# Configurando o driver com o caminho do GeckoDriver
 service = Service(gecko_driver_path)
 driver = webdriver.Firefox(options=options, service=service)
 
-# Passo 3: Acessar o site do Google
 driver.get("https://mail.google.com/mail/u/0/#inbox")
 
-# Esperar alguns segundos para garantir que a página carregue
 time.sleep(3)
-
-
-# Passo 4: Encontrar o campo de busca
 
 
 search_box1 = WebDriverWait(driver, 10).until(
@@ -72,7 +65,5 @@ destinatario_email_input.click()
 destinatario_email_input.send_keys("TESte@gmail.com") #Insira o e-mail do destinatario
 destinatario_email_input.send_keys(Keys.TAB)
 destinatario_email_input.send_keys(Keys.LEFT_CONTROL, Keys.ENTER)
-# # Esperar alguns segundos para visualizar o clique
 
-#Passo 7: Fechar o navegador
 driver.quit()
